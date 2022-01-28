@@ -11,8 +11,8 @@ def index():
 
     return render_template("index.html")
 
-@app.route('/cool_form', methods=['GET', 'POST'])
-def cool_form():
+@app.route('/sida2', methods=['GET', 'POST'])
+def sida2():
     if request.method == 'POST':
         # do stuff when the form is submitted
 
@@ -22,6 +22,19 @@ def cool_form():
 
     # show the form, it wasn't submitted
     return render_template('index2.html')
+
+
+@app.route('/sida3', methods=['GET', 'POST'])
+def sida3():
+    if request.method == 'POST':
+        # do stuff when the form is submitted
+
+        # redirect to end the POST handling
+        # the redirect can be to the same route or somewhere else
+        return "redirect(url_for('index'))"
+
+    # show the form, it wasn't submitted
+    return render_template('index3.html')
 
 
 # This starts the web app 
